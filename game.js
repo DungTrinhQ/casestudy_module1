@@ -1,21 +1,21 @@
-var CELL_SIZE = 10;
-var FPS = 10    ;
-var WIDTH = 400;
-var HEIGHT = 400;
+let CELL_SIZE = 10;
+let FPS = 10    ;
+let WIDTH = 400;
+let HEIGHT = 400;
 
-function Game(canvas_id){
-    var pressedKey;
-    var cols = WIDTH/CELL_SIZE;
-    var rows = HEIGHT/CELL_SIZE;
-    var snake = new Snake(cols,rows);
+let Game = function(canvas_id){
+    let pressedKey;
+    let cols = WIDTH/CELL_SIZE;
+    let rows = HEIGHT/CELL_SIZE;
+    let snake = new Snake(cols,rows);
 
-    var canvas = document.getElementById(canvas_id);
-    var context = canvas.getContext('2d');
-    context.fillStyle = "black";
 
-    var food = {};
-    var running = false;
-    var timer;
+    let canvas = document.getElementById(canvas_id);
+    let context = canvas.getContext('2d');
+
+    let food = {};
+    let running = false;
+    let timer;
 
     this.init = function() {
         canvas.width = WIDTH;
@@ -39,7 +39,7 @@ function Game(canvas_id){
         context.font = "36px Arial";
         context.fillText("Snake",WIDTH/2,HEIGHT/3);
         context.font = "16px Arial";
-        context.fillText("Press Enter to Start",WIDTH/2,HEIGHT/2);
+        context.fillText("Press Enter to start",WIDTH/2,HEIGHT/2);
 
     }
 
@@ -58,7 +58,7 @@ function Game(canvas_id){
             return;
 
         snake.handleKey(pressedKey);
-        var ret = snake.update(food);
+        let ret = snake.update(food);
 
         if(ret==1)
         {
@@ -90,8 +90,8 @@ function Game(canvas_id){
     }
 
     function createFood() {
-        var x = Math.floor(Math.random()*cols);
-        var y;
+        let x = Math.floor(Math.random()*cols);
+        let y;
         do {
             y = Math.floor(Math.random()*rows);
         } while(snake.collide(x, y));
