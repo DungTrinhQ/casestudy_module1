@@ -20,7 +20,7 @@ let Snake = function (mapCols, mapRows) {
         // 37: trái, 38: lên, 39: phải, 40: xuống
         if (key >= 37 && key <= 40) {
             let newdir = key - 37;
-            if (Math.abs(direction - newdir) != 2) // không di chuyển theo chiều ngược lại 
+            if (Math.abs(direction - newdir) != 2) // không di chuyển theo chiều ngược lại
                 direction = newdir;
         }
     };
