@@ -25,8 +25,10 @@ let Snake = function (mapCols, mapRows) {
         }
     };
     this.draw = function (ctx) {
-        for (let i = 0; i < data.length; i++)
+        for (let i = 0; i < data.length; i++) {
+            ctx.fillStyle = "red";
             ctx.fillRect(data[i].x * CELL_SIZE, data[i].y * CELL_SIZE, CELL_SIZE, CELL_SIZE);
+        }
     };
 
     this.update = function (food) {
@@ -51,7 +53,7 @@ let Snake = function (mapCols, mapRows) {
         // eat food: return 1
         if (x == food.x && y == food.y) {
             data.unshift(food);
-            score+=1;
+            score += 1;
             document.getElementById('score').innerHTML = 'Score:'+score;
             return 1;
         }
