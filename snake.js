@@ -4,7 +4,7 @@ let Snake = function (mapCols, mapRows) {
     let LEFT = 0, UP = 1, RIGHT = 2, DOWN = 3;
     let direction; // phương hướng di chuyển
     let data; // thân rắn
-    let score=0;
+    let score = 0;
     this.init = function () {
         let x = 3;
         let y = 0;
@@ -25,10 +25,8 @@ let Snake = function (mapCols, mapRows) {
         }
     };
     this.draw = function (ctx) {
-        for (let i = 0; i < data.length; i++) {
-            ctx.fillStyle = "red";
+        for (let i = 0; i < data.length; i++)
             ctx.fillRect(data[i].x * CELL_SIZE, data[i].y * CELL_SIZE, CELL_SIZE, CELL_SIZE);
-        }
     };
 
     this.update = function (food) {

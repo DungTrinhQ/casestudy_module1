@@ -34,7 +34,7 @@ let Game = function(canvas_id){
             }
         };
 
-        // draw the welcome screen
+        // màn hình bắt đầu game
         context.textAlign = "center";
         context.font = "36px Arial";
         context.fillText("Snake",WIDTH/2,HEIGHT/3);
